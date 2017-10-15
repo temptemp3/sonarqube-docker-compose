@@ -62,7 +62,7 @@ docker-compose up
 
 #### install
 
-#### linux
+##### linux
 
 ```
 ( 
@@ -87,4 +87,15 @@ _sonar-provision-git() {
 }
 EOF
 )
+```
+#### using commands
+
+```
+\# trigger sonar scan in wd
+\_sonar-scanner PROJECT\_KEY
+```
+
+```
+\#add sonarqube-docker-compose project to sonarqube
+\_sonar-provision-git https://github.com/temptemp3/sonarqube-docker-compose.git 
 ```
