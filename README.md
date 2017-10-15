@@ -19,6 +19,7 @@ _
 ```
 _() {
 docker build --tag sonar_dc:latest --no-cache .
+docker-compose rm
 docker-compose up
 }
 ```
