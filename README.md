@@ -8,7 +8,7 @@ Docker compose recipe for extending tho [official Docker image for Sonarqube](ht
 _() {
  git clone https://github.com/temptemp3/sonarqube-docker-compose.git
  cd sonarqube-docker-compose
- docker build --tag sonar_dc:latest --no-cache .
+ docker build --tag sonar_dc:latest --no-cache --force-rm .
  docker-compose up
 }
 _
@@ -18,7 +18,7 @@ _
 
 ```
 _() {
-docker build --tag sonar_dc:latest --no-cache .
+docker build --tag sonar_dc:latest --no-cache --force-rm .
 docker-compose rm -fv
 docker-compose up
 }
