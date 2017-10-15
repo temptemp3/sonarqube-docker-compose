@@ -60,6 +60,8 @@ docker-compose up
 
 ### sonar scanner
 
+see [Analyzing with SonarQube Scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner)
+
 #### install
 
 ##### linux
