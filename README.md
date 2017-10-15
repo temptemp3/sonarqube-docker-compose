@@ -14,6 +14,13 @@ _() {
 _
 ```
 
+## rebuild
+
+```
+docker build --tag sonar_dc:latest --no-cache .
+docker-compose up
+```
+
 ## get
 
 ```
