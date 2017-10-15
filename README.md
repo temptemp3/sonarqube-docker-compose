@@ -108,6 +108,8 @@ _sonar-provision-git https://github.com/temptemp3/sonarqube-docker-compose.git
 
 ### mvn sonar
 
+see [Analyzing a Maven Project](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Maven)
+
 ```
 ## using mvn 
 # _mvn-sonar - trigger sonar
