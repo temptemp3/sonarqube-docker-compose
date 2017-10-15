@@ -40,7 +40,7 @@ docker-compose up
 
 **Dockerfile**
 
-- used by build sonar_dc:latest
+- used to build sonar_dc:latest
 - configures entry point
 
 **docker-compose.yml**
