@@ -90,10 +90,14 @@ EOF
 ```
 #### using commands
 
+##### \_sonar-scanner
+
 ```
 # trigger sonar scan in working directory
 _sonar-scanner PROJECT_KEY
 ```
+
+##### \_sonar-provision-git
 
 ```
 # add sonarqube-docker-compose project to sonarqube
