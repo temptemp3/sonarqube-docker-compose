@@ -40,12 +40,12 @@ docker-compose up
 
 **Dockerfile**
 
-- used to build sonar_dc:latest
+- used to build `sonar_dc:latest` image from official Docker image for Sonarqube
 - configures entry point
 
 **docker-compose.yml**
 
-- compose using sonar_dc:latest 
+- compose using `sonar_dc:latest` image 
 
 **init**
 
