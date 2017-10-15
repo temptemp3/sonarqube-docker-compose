@@ -92,10 +92,30 @@ _sonar-scanner() { { local project_key ; project_key="${1}" ; }
         -Dsonar.projectKey=${project_key} \
         -Dsonar.sources=.
 }
-_sonar-provision-git() {
-	git clone ${1}
-	cd $( basename ${1} .git )
-	_sonar-scanner $( basename ${1} .git )
+_sonar-provision-git() { 
+ _() {
+   git clone ${1} ${2}
+   (
+     cd $( basename ${1} .git )
+     _sonar-scanner $( basename ${1} .git )
+   )
+ }
+ case ${#} in
+  1|2) {
+   _ ${@}
+  } ;;
+  0) {
+   while [ ! ]
+   do
+    echo adsf
+    read input
+    _ ${input}
+   done 
+  } ;;
+  *) {
+   true
+  } ;;
+ esac
 }
 EOF
 )
