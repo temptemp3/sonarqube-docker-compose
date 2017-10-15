@@ -53,4 +53,5 @@ docker-compose up
 - default
   + installs python golang and scala plugins
   + removes preinstalled java and web related, xml and javascrapt
+  + as in [examples/init-install-plugins-go-python-scala](https://github.com/temptemp3/sonarqube-docker-compose/examples/init-install-plugins-go-python-scala)
 - drop-in other to roll your own
