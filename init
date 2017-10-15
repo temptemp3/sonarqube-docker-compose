@@ -2,7 +2,7 @@
 
 # Install plugins
 (
-  cd /opt/sonar/extensions/plugins
+  cd extensions/plugins
   _() { { local urls ; urls=${@} ; }
    local url
    for url in ${urls}
@@ -28,5 +28,15 @@
   sonar-java* \
   sonar-javascript*
 )
+
+sonar-start() {
+ ## for apt-get installed sonar
+ #bin/linux-x86-64/sonar.sh \
+ #	start
+ #tail -f opt/sonarqube/logs/sonar.log
+ bin/run.sh
+}
+
+sonar-start
 
 exit 0
