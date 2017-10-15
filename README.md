@@ -91,11 +91,11 @@ EOF
 #### using commands
 
 ```
-# trigger sonar scan in wd
-_sonar-scanner PROJECT\_KEY
+# trigger sonar scan in working directory
+_sonar-scanner PROJECT_KEY
 ```
 
 ```
-#add sonarqube-docker-compose project to sonarqube
+# add sonarqube-docker-compose project to sonarqube
 _sonar-provision-git https://github.com/temptemp3/sonarqube-docker-compose.git 
 ```
