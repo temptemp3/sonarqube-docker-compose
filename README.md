@@ -99,3 +99,28 @@ _sonar-scanner PROJECT_KEY
 # add sonarqube-docker-compose project to sonarqube
 _sonar-provision-git https://github.com/temptemp3/sonarqube-docker-compose.git 
 ```
+
+### mvn sonar
+
+```
+## using mvn 
+# _mvn-sonar - trigger sonar
+# - run in base of maven
+_mvn-sonar() {
+ mvn \
+	sonar:sonar \
+	-Dsonar.host.url=http://localhost:9000 \
+ 	-Dsonar.jdbc.url=jdbc:postgresql://localhost/sonar \
+	-X
+}
+# _mvn-init() - initialize maven
+# - creates maven base
+_mvn-init() {
+ mvn \
+	archetype:generate \
+	-DgroupId=${1} \
+	-DartifactId=${1} \
+	-DarchetypeArtifactId=maven-archetype-quickstart \
+	-DinteractiveMode=false
+}
+```
