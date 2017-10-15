@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Install plugins
+(
+  cd extensions/plugins
+  _() { { local urls ; urls=${@} ; }
+   local url
+   for url in ${urls}
+   do
+    test -f "$( basename ${url} )" || {
+     wget ${url}
+    }
+   done
+  }
+  _ \
+  "https://github.com/uartois/sonar-golang/releases/download/v1.2.10/sonar-golang-plugin-1.2.10.jar" \
+  "https://sonarsource.bintray.com/Distribution/sonar-python-plugin/sonar-python-plugin-1.8.0.1496.jar" \
+  "https://github.com/Sagacify/sonar-scala/releases/download/v0.0.3/sonar-scala-plugin-0.0.3.jar"
+  _() {
+   local i
+   for i in ${@}
+   do
+    rm -rvf ${i}
+   done
+  }
+  _ \
+  sonar-xml* \
+  sonar-java* \
+  sonar-javascript*
+)
+
+sonar-start() {
+ ## for apt-get installed sonar
+ #bin/linux-x86-64/sonar.sh \
+ #	start
+ #tail -f opt/sonarqube/logs/sonar.log
+ bin/run.sh
+}
+
+sonar-start
+
+exit 0
