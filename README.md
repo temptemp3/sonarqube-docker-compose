@@ -50,4 +50,7 @@ docker-compose up
 **init**
 
 - contains extend procedures
-
+- default
+  + installs python golang and scala plugins
+  + removes preinstalled java and web related, xml and javascrapt
+- drop-in other to roll your own
