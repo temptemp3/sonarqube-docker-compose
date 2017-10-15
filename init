@@ -1,33 +1,48 @@
 #!/bin/bash
 
-# Install plugins
-(
+sonar-uninstall-plugins-xml-java-javascript() {
+
+ sonar-uninstall-plugins \
+ "sonar-xml" \
+ "sonar-java" \
+ "sonar-javascript" 
+
+}
+
+sonar-uninstall-plugins() { { local candidate_plugins ; candidate_plugins=${@} ; }
+ 
+ ( 
+
+  cd extensions/plugins 
+  local plugin
+  for plugin in ${candidate_plugins}
+  do
+   rm -rvf ${plugin}*
+  done
+
+ )
+
+}
+
+sonar-install-plugins-go-python-scala() {
+ 
+ sonar-install-plugins "https://github.com/uartois/sonar-golang/releases/download/v1.2.10/sonar-golang-plugin-1.2.10.jar" "https://sonarsource.bintray.com/Distribution/sonar-python-plugin/sonar-python-plugin-1.8.0.1496.jar" "https://github.com/Sagacify/sonar-scala/releases/download/v0.0.3/sonar-scala-plugin-0.0.3.jar"
+
+}
+sonar-install-plugins() { { local candidate_plugin_urls ; candidate_plugin_urls=${@} ; }
+ # Install plugins
+ (
   cd extensions/plugins
-  _() { { local urls ; urls=${@} ; }
-   local url
-   for url in ${urls}
-   do
-    test -f "$( basename ${url} )" || {
-     wget ${url}
-    }
-   done
-  }
-  _ \
-  "https://github.com/uartois/sonar-golang/releases/download/v1.2.10/sonar-golang-plugin-1.2.10.jar" \
-  "https://sonarsource.bintray.com/Distribution/sonar-python-plugin/sonar-python-plugin-1.8.0.1496.jar" \
-  "https://github.com/Sagacify/sonar-scala/releases/download/v0.0.3/sonar-scala-plugin-0.0.3.jar"
-  _() {
-   local i
-   for i in ${@}
-   do
-    rm -rvf ${i}
-   done
-  }
-  _ \
-  sonar-xml* \
-  sonar-java* \
-  sonar-javascript*
-)
+  local url
+  for url in ${candidate_plugin_urls}
+  do
+   test -f "$( basename ${url} )" || {
+    wget ${url}
+   }
+  done
+ )
+}
+
 
 sonar-start() {
  ## for apt-get installed sonar
@@ -37,6 +52,12 @@ sonar-start() {
  bin/run.sh
 }
 
-sonar-start
+sonar-list() {
+ #sonar-uninstall-plugins-xml-java-javascript
+ sonar-install-plugins-go-python-scala
+ sonar-start
+}
+
+sonar-list
 
 exit 0

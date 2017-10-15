@@ -1,0 +1,11 @@
+#!/bin/bash
+
+true
+
+sonar-start() {
+ bin/run.sh
+}
+
+sonar-start
+
+exit 0
