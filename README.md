@@ -1,6 +1,6 @@
 # sonarqube-docker-compose
 
-Docker compose recipes for extending tho [official Docker image for Sonarqube](https://github.com/SonarSource/docker-sonarqube).
+Docker compose recipe for extending tho [official Docker image for Sonarqube](https://github.com/SonarSource/docker-sonarqube) consisting of: Dockerfile; docker-compose.yml; and init. Use to build image derived from init changes on sonarqube image and compose services. 
 
 ## quickstart
 
