@@ -2,6 +2,8 @@
 
 Docker compose recipe for extending tho [official Docker image for Sonarqube](https://github.com/SonarSource/docker-sonarqube) consisting of: Dockerfile; docker-compose.yml; and init. Use to build image derived from init changes on sonarqube image and compose services. 
 
+---
+
 ## quickstart
 
 ```
@@ -15,6 +17,9 @@ _() {
 }
 _
 ```
+
+---
+
 
 ## rebuild
 
@@ -38,6 +43,8 @@ git clone https://github.com/temptemp3/sonarqube-docker-compose.git
 docker build --tag sonar_dc:latest --no-cache .
 ```
 
+---
+
 ## compose
 
 ### attached
@@ -50,11 +57,12 @@ docker-compose up
 
 ### detached
 
-
-
 ```
 docker-compose up -d
 ```
+
+---
+
 
 ## files 
 
