@@ -40,8 +40,20 @@ docker build --tag sonar_dc:latest --no-cache .
 
 ## compose
 
+### attached
+
+Run sonarqube container in background
+
 ```
 docker-compose up
+```
+
+### detached
+
+
+
+```
+docker-compose up -d
 ```
 
 ## files 
