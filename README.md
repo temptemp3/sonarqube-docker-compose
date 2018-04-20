@@ -18,6 +18,8 @@ _() {
 _
 ```
 
+updated 20 Apr 2018
+
 ---
 
 
@@ -60,6 +62,8 @@ docker-compose up
 ```
 docker-compose up -d
 ```
+
+added 20 Apr 2018
 
 ---
 
